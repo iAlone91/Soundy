@@ -26,18 +26,18 @@ project "Soundy"
 
     includedirs
     {
-        "%{prj.name}/vendor/sdl/include"
+        "%{prj.name}/vendor/SDL2/include"
+    }
+
+    links
+    {
+        "Soundy/vendor/SDL2/bin/*.lib"
     }
 
     filter "system:windows"
         cppdialect "c++17"
         staticruntime "on"
         systemversion "latest"
-
-        postbuildcommands
-        {
-           ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/sandbox")
-        }
 
         filter "configurations:Debug"
             defines "DEBUG"
