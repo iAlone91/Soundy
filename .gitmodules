@@ -1,3 +1,0 @@
-[submodule "Soundy/vendor/SDL"]
-	path = Soundy/vendor/SDL
-	url = https://github.com/libsdl-org/SDL
