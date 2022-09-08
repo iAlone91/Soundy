@@ -3,6 +3,9 @@
 /bin/
 /bin-int/
 
+#remove later!
+/resources
+
 # Files
 *.user
 *.sln
