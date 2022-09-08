@@ -8,15 +8,15 @@ workspace "Soundy"
         "Dist"
     }
 
-outputdir = "{%cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "Soundy"
     location "Soundy"
     kind "ConsoleApp"
     language "c++"
 
-    targetdir   ("bin/" .. outputdir .. "/%prj.name")
-    objdir      ("bin-int/" .. outputdir .. "/%prj.name")
+    targetdir   ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir      ("bin-int/" .. outputdir .. "/%[prj.name}")
 
     files
     {
