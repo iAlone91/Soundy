@@ -16,7 +16,7 @@ project "Soundy"
     language "c++"
 
     targetdir   ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir      ("bin-int/" .. outputdir .. "/%[prj.name}")
+    objdir      ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     files
     {
@@ -38,6 +38,11 @@ project "Soundy"
         cppdialect "c++17"
         staticruntime "on"
         systemversion "latest"
+
+        postbuildcommands 
+        {
+            "{COPY} %{prj.location}/vendor/SDL2/bin/*SDL2.dll ../bin/" .. outputdir .. "/%{prj.name}/"
+        }
 
         filter "configurations:Debug"
             defines "DEBUG"
